@@ -1,0 +1,25 @@
+{
+  "createNewBatch": "Y",
+  "templateBatchId": "0001",
+  "filePath": "C:\\testing\\requestGenTest.txt",
+  "sequence": "1000000000",
+  "numOfReq": "2",
+  "firstName": "FN",
+  "lastName": "LN",
+  "rxNumPrefix": "A",
+  "cardHolderId": "E",
+  "cardHolderIdSkip": "true",
+  "namesSkip": "true",
+  "append": "true",
+  "scenariosNumber": "2",
+  "DOSIncrementDays": "7",
+  "editableFields": {
+    "rxNumber": "",
+    "cardholderId": "",
+    "personCode": "",
+    "sccCode": "",
+    "dos": "",
+    "dob": "",
+    "override": ""
+  }
+}

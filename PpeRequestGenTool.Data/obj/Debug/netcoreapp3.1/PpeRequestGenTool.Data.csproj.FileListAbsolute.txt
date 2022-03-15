@@ -1,0 +1,10 @@
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\bin\Debug\netcoreapp3.1\PpeRequestGenTool.Data.deps.json
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\bin\Debug\netcoreapp3.1\PpeRequestGenTool.Data.dll
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\bin\Debug\netcoreapp3.1\PpeRequestGenTool.Data.pdb
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Data.AssemblyInfoInputs.cache
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Data.AssemblyInfo.cs
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Data.csproj.CoreCompileInputs.cache
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Data.dll
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Data.pdb
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Data.csproj.AssemblyReference.cache
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Data.GeneratedMSBuildEditorConfig.editorconfig

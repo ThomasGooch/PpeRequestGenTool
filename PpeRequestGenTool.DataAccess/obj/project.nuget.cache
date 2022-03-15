@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zb5D3I6oLxcWrRioWBVoM++EG0PAwq+2E2JY7i6Vdyf/EGS7hQBq4CdnE6hZ5shGxu8v2+mHFZLJU9CoV5FxzA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\e7897bt\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

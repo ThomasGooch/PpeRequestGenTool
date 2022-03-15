@@ -1,0 +1,12 @@
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\bin\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.deps.json
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\bin\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.dll
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\bin\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.pdb
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\bin\Release\netcoreapp3.1\PpeRequestGenTool.Data.dll
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\bin\Release\netcoreapp3.1\PpeRequestGenTool.Data.pdb
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\obj\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.csprojAssemblyReference.cache
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\obj\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.AssemblyInfoInputs.cache
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\obj\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.AssemblyInfo.cs
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\obj\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\obj\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.csproj.CopyComplete
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\obj\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.dll
+C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.DataAccess\obj\Release\netcoreapp3.1\PpeRequestGenTool.DataAccess.pdb

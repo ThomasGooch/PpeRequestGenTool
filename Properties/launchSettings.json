@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PpeRequestGenTestTool": {
+      "commandName": "Project",
+      "commandLineArgs": "-?"
+    }
+  }
+}

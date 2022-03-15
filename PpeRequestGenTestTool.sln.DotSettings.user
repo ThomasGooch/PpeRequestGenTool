@@ -1,0 +1,8 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=08b96527_002D213b_002D44d6_002Db239_002D583c100cd85d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Build_batch_file_with_ID_first_line_success" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::075B2CB3-12EC-4176-AD9A-402E7AD34B99::.NETCoreApp,Version=v3.1::PpeRequestGenTool.Tests.RequestBuilderTests.Collect_altered_strings&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::C84CA4F7-455F-4946-9ED9-049A8525DD25::.NETCoreApp,Version=v3.1::PpeRequestGenTool.IntegrationTests.RequestBuilderIntegrationTests.Update_batch_file_with_content_success&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::C84CA4F7-455F-4946-9ED9-049A8525DD25::.NETCoreApp,Version=v3.1::PpeRequestGenTool.IntegrationTests.RequestBuilderIntegrationTests.Build_batch_file_with_content_success&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
