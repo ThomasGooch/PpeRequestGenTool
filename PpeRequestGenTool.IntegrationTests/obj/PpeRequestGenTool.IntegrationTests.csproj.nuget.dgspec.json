@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.IntegrationTests\\PpeRequestGenTool.IntegrationTests.csproj": {}
+    "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.IntegrationTests\\PpeRequestGenTool.IntegrationTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj": {
+    "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
+        "projectUniqueName": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
         "projectName": "PpeRequestGenTool.Business",
-        "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
+        "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
         "packagesPath": "C:\\Users\\e7897bt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\obj\\",
+        "outputPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,11 +31,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj"
+              "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj": {
+                "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj"
               },
-              "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
-                "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj"
+              "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
+                "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj"
               }
             }
           }
@@ -86,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj": {
+    "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj",
+        "projectUniqueName": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj",
         "projectName": "PpeRequestGenTool.DataAccess",
-        "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj",
+        "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj",
         "packagesPath": "C:\\Users\\e7897bt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\obj\\",
+        "outputPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -113,8 +113,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
-                "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj"
+              "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
+                "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj"
               }
             }
           }
@@ -153,14 +153,14 @@
         }
       }
     },
-    "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
+    "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
+        "projectUniqueName": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
         "projectName": "PpeRequestGenTool.Data",
-        "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
+        "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
         "packagesPath": "C:\\Users\\e7897bt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\obj\\",
+        "outputPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -210,14 +210,14 @@
         }
       }
     },
-    "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.IntegrationTests\\PpeRequestGenTool.IntegrationTests.csproj": {
+    "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.IntegrationTests\\PpeRequestGenTool.IntegrationTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.IntegrationTests\\PpeRequestGenTool.IntegrationTests.csproj",
+        "projectUniqueName": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.IntegrationTests\\PpeRequestGenTool.IntegrationTests.csproj",
         "projectName": "PpeRequestGenTool.IntegrationTests",
-        "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.IntegrationTests\\PpeRequestGenTool.IntegrationTests.csproj",
+        "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.IntegrationTests\\PpeRequestGenTool.IntegrationTests.csproj",
         "packagesPath": "C:\\Users\\e7897bt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.IntegrationTests\\obj\\",
+        "outputPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.IntegrationTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -237,11 +237,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj": {
-                "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj"
+              "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj": {
+                "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj"
               },
-              "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj"
+              "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj": {
+                "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj"
               }
             }
           }

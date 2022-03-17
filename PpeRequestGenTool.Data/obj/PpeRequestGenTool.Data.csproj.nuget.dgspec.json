@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {}
+    "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
+    "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
+        "projectUniqueName": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
         "projectName": "PpeRequestGenTool.Data",
-        "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
+        "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
         "packagesPath": "C:\\Users\\e7897bt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\obj\\",
+        "outputPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

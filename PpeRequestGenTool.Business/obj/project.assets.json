@@ -454,11 +454,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
+      "projectUniqueName": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
       "projectName": "PpeRequestGenTool.Business",
-      "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
+      "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
       "packagesPath": "C:\\Users\\e7897bt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Business\\obj\\",
+      "outputPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -478,11 +478,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj"
+            "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj": {
+              "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj"
             },
-            "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
-              "projectPath": "C:\\Users\\e7897bt\\GitLab\\UTILITIES\\rh-runtime-terror-utilities\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj"
+            "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj": {
+              "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj"
             }
           }
         }
