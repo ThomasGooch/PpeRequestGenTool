@@ -25,7 +25,7 @@ namespace PpeRequestGenTool.Tests
             };
             var parsedTestStr = request.ParseRequestString(testStr);
             //act
-            var success = _sut.CreateRecords(parsedTestStr, testStr);
+            var success = _sut.CreateRecords(testStr);
             //assert
             Assert.True(success.Count()>1);
         }

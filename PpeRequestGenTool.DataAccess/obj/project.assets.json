@@ -87,7 +87,6 @@
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Users\\e7897bt\\GitHub_2021\\New-Hop-Infrastructure\\src\\SmartHop.Shared\\bin\\Release": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

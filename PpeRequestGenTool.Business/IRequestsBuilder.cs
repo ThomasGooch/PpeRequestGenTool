@@ -6,7 +6,7 @@ namespace PpeRequestGenTool.Business
 {
     public interface IRequestsBuilder
     {
-        IEnumerable<string> CreateRecords(RxVaccineRequest parsedObj, string requestStr);
+        IEnumerable<string> CreateRecords(string requestStr);
         string AddRecordsToBatch(IEnumerable<string> list);
         void UpdateRecordsInBatch(string batchPath);
         void PeekAtBatch(string batchPath);

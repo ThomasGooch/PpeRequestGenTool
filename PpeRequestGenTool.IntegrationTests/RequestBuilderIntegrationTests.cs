@@ -25,7 +25,7 @@ namespace PpeRequestGenTool.IntegrationTests
                 NumberOfRequest = 2
             };
             var parsedTestStr = request.ParseRequestString(testStr);
-            var list = _sut.CreateRecords(parsedTestStr, testStr);
+            var list = _sut.CreateRecords(testStr);
             //act
             var success = _sut.AddRecordsToBatch(list);
             //assert
@@ -44,7 +44,7 @@ namespace PpeRequestGenTool.IntegrationTests
                 NumberOfRequest = 2
             };
             var parsedTestStr = request.ParseRequestString(testStr);
-            var list = _sut.CreateRecords(parsedTestStr, testStr);
+            var list = _sut.CreateRecords(testStr);
             var pathOfBatch = _sut.AddRecordsToBatch(list);
 
             //act
@@ -66,7 +66,7 @@ namespace PpeRequestGenTool.IntegrationTests
                 NumberOfRequest = 2
             };
             var parsedTestStr = request.ParseRequestString(testStr);
-            var list = _sut.CreateRecords(parsedTestStr, testStr);
+            var list = _sut.CreateRecords(testStr);
             var batchPath = _sut.AddRecordsToBatch(list);
             
             //act

@@ -7,3 +7,13 @@ C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.
 C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.csproj.CoreCompileInputs.cache
 C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.dll
 C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.pdb
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\bin\Release\netcoreapp3.1\PpeRequestGenTool.Data.deps.json
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\bin\Release\netcoreapp3.1\PpeRequestGenTool.Data.dll
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\bin\Release\netcoreapp3.1\PpeRequestGenTool.Data.pdb
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.csproj.AssemblyReference.cache
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.AssemblyInfoInputs.cache
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.AssemblyInfo.cs
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.csproj.CoreCompileInputs.cache
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.dll
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Data\obj\Release\netcoreapp3.1\PpeRequestGenTool.Data.pdb

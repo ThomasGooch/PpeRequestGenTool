@@ -11,7 +11,7 @@ namespace PpeRequestGenTool.Presentation
     class Program
     {
         private static RequestsBuilder requestBuilder = new RequestsBuilder();
-        private static RxVaccineRequest rxVaccine = new RxVaccineRequest();
+       
 
         static void Main(string[] args)
         {
@@ -171,7 +171,7 @@ namespace PpeRequestGenTool.Presentation
 
         private static void DeleteABatch()
         {
-            Console.WriteLine("Any batches for deletion? (001,002,003,...)");
+            Console.WriteLine("Any batches for deletion? (0001,0002,0003,...)");
             var batchesForDeletionStr = Console.ReadLine();
             var batchesForDeletionToArray = batchesForDeletionStr.Split(",");
             if (batchesForDeletionToArray.Length > 0 && File.Exists(requestBuilder.FileSettingsProp.FilePath + ".txt"))
@@ -243,9 +243,9 @@ namespace PpeRequestGenTool.Presentation
                     AppMenu();
                 }
 
-                var parsedTemplate = rxVaccine.ParseRequestString(template);
+                
 
-                var listOfRecords = requestBuilder.CreateRecords(parsedTemplate, template);
+                var listOfRecords = requestBuilder.CreateRecords(template);
                 var pathToBatch = requestBuilder.AddRecordsToBatch(listOfRecords);
                 // peek into file
                 requestBuilder.PeekAtBatch(pathToBatch);

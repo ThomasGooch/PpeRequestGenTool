@@ -15,7 +15,7 @@ namespace PpeRequestGenTool.Business
     {
         private static IConfigurationBuilder _builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
         private static IConfigurationRoot _config = _builder.Build();
-        
+
         #region Fields
 
         public int NumberOfRequest { get; set; }
@@ -36,64 +36,134 @@ namespace PpeRequestGenTool.Business
         }
 
         #region PublicMethods
-        
-        public IEnumerable<string> CreateRecords(RxVaccineRequest parsedObj, string requestStr)
-        {
-            
-            var result = new List<string>();
-            for (int i = 0; i < NumberOfRequest; i++)
-            {
-                // create altered string
-                string _record = "";
-                var flag = false;
-                while (!flag)
-                {
-                   _record = AlterRequestString(parsedObj, requestStr, i);
-                   flag = CheckForUniqueness(_record);
-                }
-                result.Add(_record);
-            }
-            UniqueRecord.PushToUniqueRecordDict(UniqueDictionary);
-            return result;
-        }
 
-        
-        private bool CheckForUniqueness(string record)
+        public IEnumerable<string> CreateRecords(string requestStr)
         {
-            var parser = new RxVaccineRequest();
-            var obj = parser.ParseRequestString(record);
-            var key = obj.FirstName + obj.LastName + obj.DateOfBirth + obj.ZipCode;
-            if (File.Exists(UniqueRecord.FilePath) && UniqueDictionary.ContainsKey(key))
+
+            if (bool.Parse(_config.GetSection("SmartHop").Value))
             {
-                return false;
+                var parsedObj = new SmartHopRequest();
+                var result = new List<string>();
+                for (int i = 0; i < NumberOfRequest; i++)
+                {
+                    // create altered string
+                    string _record = "";
+                    var flag = false;
+                    while (!flag)
+                    {
+                        _record = AlterRequestString(parsedObj.ParseRequestString(requestStr), requestStr, i);
+                        flag = CheckForUniqueness(_record);
+                    }
+                    result.Add(_record);
+                }
+                UniqueRecord.PushToUniqueRecordDict(UniqueDictionary);
+                return result;
             }
             else
             {
-                UniqueDictionary.Add(key,"");
-                return true;
-            }
-        }
-        
-        public string CreateRecordsByTemplate(string templateBatchId)
-        {
-            // we want to go through each row and update accordingly
-            var request = new RxVaccineRequest();
-            var path = Path.Join(_config.GetSection("filePath").Value + templateBatchId + ".txt");
-            var listOfRecords = File.ReadLines(path);
-            var listOfUpdatedRecords = new List<string>();
-            foreach (var record in listOfRecords)
-            {
-                if (record.Length>5)
+                var parsedObj = new RxVaccineRequest();
+
+                var result = new List<string>();
+                for (int i = 0; i < NumberOfRequest; i++)
                 {
-                    var _record = request.ParseRequestString(record);
-                    listOfUpdatedRecords.Add(UpdateARecord(_record, record));
+                    // create altered string
+                    string _record = "";
+                    var flag = false;
+                    while (!flag)
+                    {
+                        _record = AlterRequestString(parsedObj.ParseRequestString(requestStr), requestStr, i);
+                        flag = CheckForUniqueness(_record);
+                    }
+                    result.Add(_record);
                 }
-                
+                UniqueRecord.PushToUniqueRecordDict(UniqueDictionary);
+                return result;
             }
 
-            var batch = new BatchFileBuilder(_config.GetSection("filePath").Value, _config.GetSection("batchId").Value);
-            batch.WriteToBatch(listOfUpdatedRecords);
-            return batch.BatchPath;
+
+
+        }
+
+
+        private bool CheckForUniqueness(string record)
+        {
+            // make smarthop addition
+            if (bool.Parse(_config.GetSection("SmartHop").Value))
+            {
+                var parser = new SmartHopRequest();
+                var obj = parser.ParseRequestString(record);
+                var key = obj.FirstName + obj.LastName + obj.DateOfBirth + obj.ZipCode;
+                if (File.Exists(UniqueRecord.FilePath) && UniqueDictionary.ContainsKey(key))
+                {
+                    return false;
+                }
+                else
+                {
+                    UniqueDictionary.Add(key, "");
+                    return true;
+                }
+            }
+            else
+            {
+                var parser = new RxVaccineRequest();
+                var obj = parser.ParseRequestString(record);
+                var key = obj.FirstName + obj.LastName + obj.DateOfBirth + obj.ZipCode;
+                if (File.Exists(UniqueRecord.FilePath) && UniqueDictionary.ContainsKey(key))
+                {
+                    return false;
+                }
+                else
+                {
+                    UniqueDictionary.Add(key, "");
+                    return true;
+                }
+            }
+
+
+        }
+
+        public string CreateRecordsByTemplate(string templateBatchId)
+        {
+            if (bool.Parse(_config.GetSection("SmartHop").Value))
+            {
+                var request = new SmartHopRequest();
+                var path = Path.Join(_config.GetSection("filePath").Value + templateBatchId + ".txt");
+                var listOfRecords = File.ReadLines(path);
+                var listOfUpdatedRecords = new List<string>();
+                foreach (var record in listOfRecords)
+                {
+                    if (record.Length > 5)
+                    {
+                        var _record = request.ParseRequestString(record);
+                        listOfUpdatedRecords.Add(UpdateARecord(_record, record));
+                    }
+
+                }
+
+                var batch = new BatchFileBuilder(_config.GetSection("filePath").Value, _config.GetSection("batchId").Value);
+                batch.WriteToBatch(listOfUpdatedRecords);
+                return batch.BatchPath;
+            }
+            else {
+                var request = new RxVaccineRequest();
+                var path = Path.Join(_config.GetSection("filePath").Value + templateBatchId + ".txt");
+                var listOfRecords = File.ReadLines(path);
+                var listOfUpdatedRecords = new List<string>();
+                foreach (var record in listOfRecords)
+                {
+                    if (record.Length > 5)
+                    {
+                        var _record = request.ParseRequestString(record);
+                        listOfUpdatedRecords.Add(UpdateARecord(_record, record));
+                    }
+
+                }
+
+                var batch = new BatchFileBuilder(_config.GetSection("filePath").Value, _config.GetSection("batchId").Value);
+                batch.WriteToBatch(listOfUpdatedRecords);
+                return batch.BatchPath;
+            }
+
         }
 
         public string AddRecordsToBatch(IEnumerable<string> list)
@@ -102,12 +172,48 @@ namespace PpeRequestGenTool.Business
             batch.WriteToBatch(list);
             return batch.BatchPath;
         }
-        
+
         public void UpdateRecordsInBatch(string batchPath)
         {
             if (!File.Exists(batchPath))
             {
                 Console.WriteLine("FILE DOES NOT EXIST! cannot update.");
+                return;
+            }
+
+            if (bool.Parse(_config.GetSection("SmartHop").Value))
+            {
+                // we want to go through each row and update accordingly
+                var request = new SmartHopRequest();
+                var batchNumber = string.Empty;
+                var match = Regex.Match(batchPath, "[0-9]{4}");
+                if (match.Success)
+                {
+                    batchNumber = match.Captures[0].Value;
+                }
+                var listOfRecords = File.ReadLines(batchPath).Skip(1);
+                var listOfUpdatedRecords = new List<string>();
+                foreach (var record in listOfRecords)
+                {
+                    var _record = request.ParseRequestString(record);
+                    listOfUpdatedRecords.Add(UpdateARecord(_record, record));
+                }
+                if (File.Exists(_config.GetSection("filePath").Value + ".txt"))
+                {
+                    RemoveBatchFromCollection(batchNumber);
+                }
+
+                try
+                {
+                    File.Delete(batchPath);
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine("error updating batch records: " + e);
+                    throw;
+                }
+                var batch = new BatchFileBuilder(_config.GetSection("filePath").Value, batchNumber);
+                batch.WriteToBatch(listOfUpdatedRecords);
             }
             else
             {
@@ -144,16 +250,15 @@ namespace PpeRequestGenTool.Business
                 batch.WriteToBatch(listOfUpdatedRecords);
             }
 
-
         }
-        
+
         public string AddBatchToCollection(string batchFilePath)
         {
             var batchCollection = new BatchCollectionFileBuilder(_config.GetSection("filePath").Value);
             batchCollection.WriteToBatchCollection(batchFilePath);
             return batchCollection.BatchCollectionPath;
         }
-        
+
         public void PeekAtBatch(string batchPath)
         {
             if (File.Exists(batchPath))
@@ -182,11 +287,11 @@ namespace PpeRequestGenTool.Business
             }
             else
             {
-                Console.WriteLine("Invalid batchId: "+ batchPath);
+                Console.WriteLine("Invalid batchId: " + batchPath);
             }
-           
+
         }
-        
+
         public void PeekAtCollection()
         {
             if (File.Exists(_config.GetSection("filePath").Value + ".txt"))
@@ -209,8 +314,8 @@ namespace PpeRequestGenTool.Business
             {
                 Console.WriteLine("Collection has not yet been created. Push a Batch to Collection for creation. ");
             }
-           
-            
+
+
         }
 
         public void RemoveBatchFromCollection(string batchNumber)
@@ -218,7 +323,7 @@ namespace PpeRequestGenTool.Business
             var batchCollection = new BatchCollectionFileBuilder(_config.GetSection("filePath").Value);
             batchCollection.RemoveBatchByBatchNumber(batchNumber);
         }
-        
+
         public void CreateFinalOutput()
         {
             var batchCollection = new BatchCollectionFileBuilder(_config.GetSection("filePath").Value);
@@ -286,9 +391,9 @@ namespace PpeRequestGenTool.Business
             }
             else
             {
-                result = slice.Substring(0,2) + setting + _slice;
+                result = slice.Substring(0, 2) + setting + _slice;
             }
-           
+
             return result;
         }
         private string RetrieveRandomDate(string max, string min, string type)
@@ -333,119 +438,233 @@ namespace PpeRequestGenTool.Business
             var etxIndex = v.IndexOf((char)3) + 1;
             return (etxIndex - int.Parse(_config.GetSection("requestStartPoint").Value)).ToString(fmt);
         }
-        private string AlterRequestString(RxVaccineRequest parsedObj, string requestStr, int count)
+        private string AlterRequestString(BaseRequest parsedObj, string requestStr, int count)
         {
-            var result = new StringBuilder(requestStr);
-            var fieldSettings = _config.GetSection("editableFields");
-            var requestLength = requestStr.Substring(16, 4);
-            result.Replace(parsedObj.FirstName, "CA" + RetrieveRandomFirstName());
-            result.Replace(parsedObj.LastName, "CB" + RetrieveRandomLastName());
-            result.Replace(parsedObj.RxNumber, "D2" + fieldSettings.GetSection("rxNumberPrefix").Value + IncrementValue(count));
-            if (fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
+
+            //when given an object we need it to be found as a smarthop or an rxvaccinerequest
+
+            var smartHopReq = parsedObj as SmartHopRequest;
+            var rxVaccineReq = parsedObj as RxVaccineRequest;
+
+            if (smartHopReq != null)
             {
-                result.Replace(parsedObj.CardholderId, "C2" + fieldSettings.GetSection("cardholderIdPrefix").Value + IncrementValue(count));
+                var result = new StringBuilder(requestStr);
+                var fieldSettings = _config.GetSection("editableFields");
+                //var requestLength = requestStr.Substring(16, 4);
+                result.Replace(smartHopReq.FirstName, "CA" + RetrieveRandomFirstName());
+                result.Replace(smartHopReq.LastName, "CB" + RetrieveRandomLastName());
+                result.Replace(smartHopReq.RxNumber, "D2" + fieldSettings.GetSection("rxNumberPrefix").Value + IncrementValue(count));
+                if (fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
+                {
+                    result.Replace(smartHopReq.CardholderId, "C2" + fieldSettings.GetSection("cardholderIdPrefix").Value + IncrementValue(count));
+                }
+                if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+                {
+                    result.Replace(smartHopReq.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                }
+                else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
+                {
+                    result.Replace(smartHopReq.PersonCode, "C3" + RetrieveRandomPersonCode());
+                }
+                result.Replace(smartHopReq.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value);
+                result.Replace(smartHopReq.DateOfBirth, "C4" + RetrieveRandomDate(_config.GetSection("DobMax").Value, _config.GetSection("DobMin").Value, "birth"));
+                result.Replace(smartHopReq.ZipCode, "CP" + RetrieveRandomZipCode());
+                if (fieldSettings.GetSection("ndc").Value != "SKIP")
+                {
+                    result.Replace(smartHopReq.NdcCode, "D7" + fieldSettings.GetSection("ndc").Value);
+                }
+                //var adjustedLength = FindRequestLength(result.ToString());
+                //result.Replace(requestLength, adjustedLength);
+                return result.ToString();
             }
-            if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+            else
             {
-                result.Replace(parsedObj.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                var result = new StringBuilder(requestStr);
+                var fieldSettings = _config.GetSection("editableFields");
+                var requestLength = requestStr.Substring(16, 4);
+                result.Replace(rxVaccineReq.FirstName, "CA" + RetrieveRandomFirstName());
+                result.Replace(rxVaccineReq.LastName, "CB" + RetrieveRandomLastName());
+                result.Replace(rxVaccineReq.RxNumber, "D2" + fieldSettings.GetSection("rxNumberPrefix").Value + IncrementValue(count));
+                if (fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
+                {
+                    result.Replace(rxVaccineReq.CardholderId, "C2" + fieldSettings.GetSection("cardholderIdPrefix").Value + IncrementValue(count));
+                }
+                if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+                {
+                    result.Replace(rxVaccineReq.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                }
+                else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
+                {
+                    result.Replace(rxVaccineReq.PersonCode, "C3" + RetrieveRandomPersonCode());
+                }
+                result.Replace(rxVaccineReq.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value);
+                //result.Replace(rxVaccineReq.DateOfService, "D1" + RetrieveRandomDate(_config.GetSection("DosMax").Value, _config.GetSection("DosMin").Value, "service"));
+                result.Replace(rxVaccineReq.DateOfBirth, "C4" + RetrieveRandomDate(_config.GetSection("DobMax").Value, _config.GetSection("DobMin").Value, "birth"));
+                result.Replace(rxVaccineReq.ZipCode, "CP" + RetrieveRandomZipCode());
+                result.Replace(rxVaccineReq.Override, "EV" + fieldSettings.GetSection("override").Value);
+                if (fieldSettings.GetSection("ndc").Value != "SKIP")
+                {
+                    result.Replace(rxVaccineReq.NdcCode, "D7" + fieldSettings.GetSection("ndc").Value);
+                }
+                var adjustedLength = FindRequestLength(result.ToString());
+                result.Replace(requestLength, adjustedLength);
+                return result.ToString();
             }
-            else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
-            {
-                result.Replace(parsedObj.PersonCode, "C3" + RetrieveRandomPersonCode());
-            }
-            result.Replace(parsedObj.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value);
-            result.Replace(parsedObj.DateOfService, "D1" + RetrieveRandomDate(_config.GetSection("DosMax").Value, _config.GetSection("DosMin").Value, "service"));
-            result.Replace(parsedObj.DateOfBirth, "C4" + RetrieveRandomDate(_config.GetSection("DobMax").Value, _config.GetSection("DobMin").Value, "birth"));
-            result.Replace(parsedObj.ZipCode, "CP" + RetrieveRandomZipCode());
-            result.Replace(parsedObj.Override, "EV" + fieldSettings.GetSection("override").Value);
-            if (fieldSettings.GetSection("ndc").Value != "SKIP")
-            {
-                result.Replace(parsedObj.NdcCode, "D7" + fieldSettings.GetSection("ndc").Value);
-            }
-            var adjustedLength = FindRequestLength(result.ToString());
-            result.Replace(requestLength, adjustedLength);
-            return result.ToString();
+
         }
-        private string UpdateARecord(RxVaccineRequest parsedObj, string requestStr)
+        private string UpdateARecord(BaseRequest parsedObj, string requestStr)
         {
-            var result = new StringBuilder(requestStr);
-            var fieldSettings = _config.GetSection("duplicateBatch");
-            var requestLength = requestStr.Substring(16, 4);
-            if (fieldSettings.GetSection("firstName").Value != "SKIP")
-            {
-                result.Replace(parsedObj.FirstName, "CA" + RetrieveRandomFirstName());
-            }
-            if (fieldSettings.GetSection("lastName").Value != "SKIP")
-            {
-                result.Replace(parsedObj.LastName, "CB" + RetrieveRandomLastName());
-            }
-            if (fieldSettings.GetSection("rxNumberPrefix").Value != "SKIP")
-            {
-                var _extract = extractPrefix(parsedObj.RxNumber, fieldSettings.GetSection("rxNumberPrefix").Value);
-                result.Replace(parsedObj.RxNumber, _extract);
-            }
-            if (fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
-            {
-                var _extract = extractPrefix(parsedObj.CardholderId, fieldSettings.GetSection("cardholderIdPrefix").Value);
-                result.Replace(parsedObj.CardholderId, _extract);
-            }
-            if (fieldSettings.GetSection("sccCode").Value != "SKIP")
-            {
-                result.Replace(parsedObj.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value);
-            }
-            if (fieldSettings.GetSection("override").Value != "SKIP")
-            {
-                result.Replace(parsedObj.Override, "EV" + fieldSettings.GetSection("override").Value);
-            }
-            if (fieldSettings.GetSection("ndc").Value != "SKIP")
-            {
-                result.Replace(parsedObj.NdcCode, "D7" + fieldSettings.GetSection("ndc").Value);
-            }
-            if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
-            {
-                result.Replace(parsedObj.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
-            }
-            else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
-            {
-                result.Replace(parsedObj.PersonCode, "C3" + RetrieveRandomPersonCode());
-            }
+            var smartHopReq = parsedObj as SmartHopRequest;
+            var rxVaccineReq = parsedObj as RxVaccineRequest;
 
-            if (!(fieldSettings.GetSection("dos").Value == "SKIP" || fieldSettings.GetSection("dos").Value == "RANDOM"))
+            if (smartHopReq != null)
             {
-                // find increment or decrement
-                var _change = FindDateByChange(parsedObj.DateOfService, fieldSettings.GetSection("dos").Value);
-                result.Replace(parsedObj.DateOfService, "D1" + _change);
-            }
-            else if (fieldSettings.GetSection("dos").Value == "RANDOM")
-            {
-                result.Replace(parsedObj.DateOfService, "D1" + RetrieveRandomDate(fieldSettings.GetSection("DosMin").Value, fieldSettings.GetSection("DosMax").Value, "service"));
-            }
-
-            if (!(fieldSettings.GetSection("dob").Value == "SKIP" || fieldSettings.GetSection("dob").Value == "RANDOM"))
-            {
-                // find increment or decrement
-                var _change = FindDateByChange(parsedObj.DateOfBirth, fieldSettings.GetSection("dob").Value);
-                result.Replace(parsedObj.DateOfBirth, "C4" + _change);
-            }
-            else if (fieldSettings.GetSection("dob").Value == "RANDOM")
-            {
-                result.Replace(parsedObj.DateOfBirth, "C4" + RetrieveRandomDate(fieldSettings.GetSection("DobMin").Value, fieldSettings.GetSection("DobMax").Value, "birth"));
-            }
+                var result = new StringBuilder(requestStr);
+                var fieldSettings = _config.GetSection("duplicateBatch");
+                //var requestLength = requestStr.Substring(16, 4);
+                if (fieldSettings.GetSection("firstName").Value != "SKIP")
+                {
+                    result.Replace(smartHopReq.FirstName, "CA" + RetrieveRandomFirstName());
+                }
+                if (fieldSettings.GetSection("lastName").Value != "SKIP")
+                {
+                    result.Replace(smartHopReq.LastName, "CB" + RetrieveRandomLastName());
+                }
+                if (fieldSettings.GetSection("rxNumberPrefix").Value != "SKIP")
+                {
+                    var _extract = extractPrefix(smartHopReq.RxNumber, fieldSettings.GetSection("rxNumberPrefix").Value);
+                    result.Replace(smartHopReq.RxNumber, _extract);
+                }
+                if (fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
+                {
+                    var _extract = extractPrefix(smartHopReq.CardholderId, fieldSettings.GetSection("cardholderIdPrefix").Value);
+                    result.Replace(smartHopReq.CardholderId, _extract);
+                }
+                if (fieldSettings.GetSection("sccCode").Value != "SKIP")
+                {
+                    result.Replace(smartHopReq.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value);
+                }
+                if (fieldSettings.GetSection("ndc").Value != "SKIP")
+                {
+                    result.Replace(smartHopReq.NdcCode, "D7" + fieldSettings.GetSection("ndc").Value);
+                }
+                if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+                {
+                    result.Replace(smartHopReq.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                }
+                else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
+                {
+                    result.Replace(smartHopReq.PersonCode, "C3" + RetrieveRandomPersonCode());
+                }
+                if (!(fieldSettings.GetSection("dob").Value == "SKIP" || fieldSettings.GetSection("dob").Value == "RANDOM"))
+                {
+                    // find increment or decrement
+                    var _change = FindDateByChange(smartHopReq.DateOfBirth, fieldSettings.GetSection("dob").Value);
+                    result.Replace(smartHopReq.DateOfBirth, "C4" + _change);
+                }
+                else if (fieldSettings.GetSection("dob").Value == "RANDOM")
+                {
+                    result.Replace(smartHopReq.DateOfBirth, "C4" + RetrieveRandomDate(fieldSettings.GetSection("DobMin").Value, fieldSettings.GetSection("DobMax").Value, "birth"));
+                }
 
 
-            if (!(fieldSettings.GetSection("zipcode").Value == "SKIP" || fieldSettings.GetSection("zipcode").Value == "RANDOM"))
-            {
-                result.Replace(parsedObj.ZipCode, "CP" + fieldSettings.GetSection("zipcode").Value);
+                if (!(fieldSettings.GetSection("zipcode").Value == "SKIP" || fieldSettings.GetSection("zipcode").Value == "RANDOM"))
+                {
+                    result.Replace(smartHopReq.ZipCode, "CP" + fieldSettings.GetSection("zipcode").Value);
+                }
+                else if (fieldSettings.GetSection("zipcode").Value == "RANDOM")
+                {
+                    result.Replace(smartHopReq.ZipCode, "CP" + RetrieveRandomZipCode());
+                }
+
+
+                //var adjustedLength = FindRequestLength(result.ToString());
+                //result.Replace(requestLength, adjustedLength);
+                return result.ToString();
             }
-            else if (fieldSettings.GetSection("zipcode").Value == "RANDOM")
+            else
             {
-                result.Replace(parsedObj.ZipCode, "CP" + RetrieveRandomZipCode());
+                var result = new StringBuilder(requestStr);
+                var fieldSettings = _config.GetSection("duplicateBatch");
+                var requestLength = requestStr.Substring(16, 4);
+                if (fieldSettings.GetSection("firstName").Value != "SKIP")
+                {
+                    result.Replace(rxVaccineReq.FirstName, "CA" + RetrieveRandomFirstName());
+                }
+                if (fieldSettings.GetSection("lastName").Value != "SKIP")
+                {
+                    result.Replace(rxVaccineReq.LastName, "CB" + RetrieveRandomLastName());
+                }
+                if (fieldSettings.GetSection("rxNumberPrefix").Value != "SKIP")
+                {
+                    var _extract = extractPrefix(rxVaccineReq.RxNumber, fieldSettings.GetSection("rxNumberPrefix").Value);
+                    result.Replace(rxVaccineReq.RxNumber, _extract);
+                }
+                if (fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
+                {
+                    var _extract = extractPrefix(rxVaccineReq.CardholderId, fieldSettings.GetSection("cardholderIdPrefix").Value);
+                    result.Replace(rxVaccineReq.CardholderId, _extract);
+                }
+                if (fieldSettings.GetSection("sccCode").Value != "SKIP")
+                {
+                    result.Replace(rxVaccineReq.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value);
+                }
+                if (fieldSettings.GetSection("override").Value != "SKIP")
+                {
+                    result.Replace(rxVaccineReq.Override, "EV" + fieldSettings.GetSection("override").Value);
+                }
+                if (fieldSettings.GetSection("ndc").Value != "SKIP")
+                {
+                    result.Replace(rxVaccineReq.NdcCode, "D7" + fieldSettings.GetSection("ndc").Value);
+                }
+                if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+                {
+                    result.Replace(rxVaccineReq.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                }
+                else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
+                {
+                    result.Replace(rxVaccineReq.PersonCode, "C3" + RetrieveRandomPersonCode());
+                }
+
+                //if (!(fieldSettings.GetSection("dos").Value == "SKIP" || fieldSettings.GetSection("dos").Value == "RANDOM"))
+                //{
+                //    // find increment or decrement
+                //    var _change = FindDateByChange(rxVaccineReq.DateOfService, fieldSettings.GetSection("dos").Value);
+                //    result.Replace(rxVaccineReq.DateOfService, "D1" + _change);
+                //}
+                //else if (fieldSettings.GetSection("dos").Value == "RANDOM")
+                //{
+                //    result.Replace(rxVaccineReq.DateOfService, "D1" + RetrieveRandomDate(fieldSettings.GetSection("DosMin").Value, fieldSettings.GetSection("DosMax").Value, "service"));
+                //}
+
+                if (!(fieldSettings.GetSection("dob").Value == "SKIP" || fieldSettings.GetSection("dob").Value == "RANDOM"))
+                {
+                    // find increment or decrement
+                    var _change = FindDateByChange(rxVaccineReq.DateOfBirth, fieldSettings.GetSection("dob").Value);
+                    result.Replace(rxVaccineReq.DateOfBirth, "C4" + _change);
+                }
+                else if (fieldSettings.GetSection("dob").Value == "RANDOM")
+                {
+                    result.Replace(rxVaccineReq.DateOfBirth, "C4" + RetrieveRandomDate(fieldSettings.GetSection("DobMin").Value, fieldSettings.GetSection("DobMax").Value, "birth"));
+                }
+
+
+                if (!(fieldSettings.GetSection("zipcode").Value == "SKIP" || fieldSettings.GetSection("zipcode").Value == "RANDOM"))
+                {
+                    result.Replace(rxVaccineReq.ZipCode, "CP" + fieldSettings.GetSection("zipcode").Value);
+                }
+                else if (fieldSettings.GetSection("zipcode").Value == "RANDOM")
+                {
+                    result.Replace(rxVaccineReq.ZipCode, "CP" + RetrieveRandomZipCode());
+                }
+
+
+                var adjustedLength = FindRequestLength(result.ToString());
+                result.Replace(requestLength, adjustedLength);
+                return result.ToString();
             }
 
 
-            var adjustedLength = FindRequestLength(result.ToString());
-            result.Replace(requestLength, adjustedLength);
-            return result.ToString();
         }
 
 
