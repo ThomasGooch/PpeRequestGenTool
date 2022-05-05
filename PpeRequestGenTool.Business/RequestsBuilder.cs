@@ -141,7 +141,7 @@ namespace PpeRequestGenTool.Business
                 }
 
                 var batch = new BatchFileBuilder(_config.GetSection("filePath").Value, _config.GetSection("batchId").Value);
-                batch.WriteToBatch(listOfUpdatedRecords);
+                batch.WriteToBatch(listOfUpdatedRecords, bool.Parse(_config.GetSection("CustomResponseAdded").Value));
                 return batch.BatchPath;
             }
             else {
@@ -160,7 +160,7 @@ namespace PpeRequestGenTool.Business
                 }
 
                 var batch = new BatchFileBuilder(_config.GetSection("filePath").Value, _config.GetSection("batchId").Value);
-                batch.WriteToBatch(listOfUpdatedRecords);
+                batch.WriteToBatch(listOfUpdatedRecords, false);
                 return batch.BatchPath;
             }
 
@@ -169,8 +169,9 @@ namespace PpeRequestGenTool.Business
         public string AddRecordsToBatch(IEnumerable<string> list)
         {
             var batch = new BatchFileBuilder(FileSettingsProp.FilePath, FileSettingsProp.BatchId);
-            batch.WriteToBatch(list);
+            batch.WriteToBatch(list, bool.Parse(_config.GetSection("CustomResponseAdded").Value));
             return batch.BatchPath;
+
         }
 
         public void UpdateRecordsInBatch(string batchPath)
@@ -195,6 +196,7 @@ namespace PpeRequestGenTool.Business
                 var listOfUpdatedRecords = new List<string>();
                 foreach (var record in listOfRecords)
                 {
+                    if (record.StartsWith("D0B")) continue;
                     var _record = request.ParseRequestString(record);
                     listOfUpdatedRecords.Add(UpdateARecord(_record, record));
                 }
@@ -213,7 +215,7 @@ namespace PpeRequestGenTool.Business
                     throw;
                 }
                 var batch = new BatchFileBuilder(_config.GetSection("filePath").Value, batchNumber);
-                batch.WriteToBatch(listOfUpdatedRecords);
+                batch.WriteToBatch(listOfUpdatedRecords, bool.Parse(_config.GetSection("CustomResponseAdded").Value));
             }
             else
             {
@@ -247,7 +249,7 @@ namespace PpeRequestGenTool.Business
                     throw;
                 }
                 var batch = new BatchFileBuilder(_config.GetSection("filePath").Value, batchNumber);
-                batch.WriteToBatch(listOfUpdatedRecords);
+                batch.WriteToBatch(listOfUpdatedRecords, bool.Parse(_config.GetSection("CustomResponseAdded").Value));
             }
 
         }

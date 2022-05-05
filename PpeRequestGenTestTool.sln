@@ -1,21 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PpeRequestGenTestTool.Console", "PpeRequestGenTestTool.Console.csproj", "{E1CC57E3-B622-418D-BF09-9746385635B5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PpeRequestGenTool.Data", "PpeRequestGenTool.Data\PpeRequestGenTool.Data.csproj", "{EF8AF727-2085-40D5-8E41-17A51CA6BCB7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PpeRequestGenTool.Tests", "PpeRequestGenTool.Tests\PpeRequestGenTool.Tests.csproj", "{075B2CB3-12EC-4176-AD9A-402E7AD34B99}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PpeRequestGenTool.DataAccess", "PpeRequestGenTool.DataAccess\PpeRequestGenTool.DataAccess.csproj", "{4A3B1A78-BF2F-4662-A231-0FA36C530349}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PpeRequestGenTool.Business", "PpeRequestGenTool.Business\PpeRequestGenTool.Business.csproj", "{52F974CD-0A35-4001-B4C4-D0094039F381}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PpeRequestGenTool.IntegrationTests", "PpeRequestGenTool.IntegrationTests\PpeRequestGenTool.IntegrationTests.csproj", "{C84CA4F7-455F-4946-9ED9-049A8525DD25}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PpeRequestGenTool.Presentation", "PpeRequestGenTool.Presentation\PpeRequestGenTool.Presentation.csproj", "{2E973109-057C-4A43-AEC4-548A1681174C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PpeRequestGenTool.Presentation", "PpeRequestGenTool.Presentation\PpeRequestGenTool.Presentation.csproj", "{2E973109-057C-4A43-AEC4-548A1681174C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,18 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1CC57E3-B622-418D-BF09-9746385635B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1CC57E3-B622-418D-BF09-9746385635B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1CC57E3-B622-418D-BF09-9746385635B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1CC57E3-B622-418D-BF09-9746385635B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EF8AF727-2085-40D5-8E41-17A51CA6BCB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF8AF727-2085-40D5-8E41-17A51CA6BCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF8AF727-2085-40D5-8E41-17A51CA6BCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF8AF727-2085-40D5-8E41-17A51CA6BCB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{075B2CB3-12EC-4176-AD9A-402E7AD34B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{075B2CB3-12EC-4176-AD9A-402E7AD34B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{075B2CB3-12EC-4176-AD9A-402E7AD34B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{075B2CB3-12EC-4176-AD9A-402E7AD34B99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A3B1A78-BF2F-4662-A231-0FA36C530349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A3B1A78-BF2F-4662-A231-0FA36C530349}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A3B1A78-BF2F-4662-A231-0FA36C530349}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,10 +29,6 @@ Global
 		{52F974CD-0A35-4001-B4C4-D0094039F381}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52F974CD-0A35-4001-B4C4-D0094039F381}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52F974CD-0A35-4001-B4C4-D0094039F381}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C84CA4F7-455F-4946-9ED9-049A8525DD25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C84CA4F7-455F-4946-9ED9-049A8525DD25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C84CA4F7-455F-4946-9ED9-049A8525DD25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C84CA4F7-455F-4946-9ED9-049A8525DD25}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E973109-057C-4A43-AEC4-548A1681174C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E973109-057C-4A43-AEC4-548A1681174C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E973109-057C-4A43-AEC4-548A1681174C}.Release|Any CPU.ActiveCfg = Release|Any CPU

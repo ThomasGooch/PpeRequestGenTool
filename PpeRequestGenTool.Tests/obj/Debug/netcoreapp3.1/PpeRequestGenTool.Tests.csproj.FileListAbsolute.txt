@@ -118,13 +118,13 @@ C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.
 C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Tests\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Tests.pdb
 C:\Users\e7897bt\GitLab\UTILITIES\rh-runtime-terror-utilities\PpeRequestGenTool.Tests\obj\Debug\netcoreapp3.1\PpeRequestGenTool.Tests.genruntimeconfig.cache
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
-C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\testhost.exe
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\testhost.dll
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\appsettings.json
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\testhost.exe
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
-C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
-C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\appsettings.json
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\first_names.csv
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\last_names.csv
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\PpeRequestGenTool.Tests.deps.json
@@ -151,6 +151,8 @@ C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\Mic
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 C:\MyStuff\PpeRequestGenTool\PpeRequestGenTool.Tests\bin\Debug\netcoreapp3.1\xunit.assert.dll
