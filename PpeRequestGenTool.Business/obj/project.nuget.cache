@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sUXgr3Vo6M9NkmAfSGh0gbV9y3BB/bSicO974f+VKL+U+HtYNRTIFjakGecVLfrkPLgOEGExu4bvB+bY3sGjWg==",
+  "dgSpecHash": "cuaZ2vQjYoyufYQJNPn0NGpB+6HscGu48vp+WmwvKVVRn1shpvkGa2d2oRhjClhtd3ucD0WErJKhN5Fjy0M/yQ==",
   "success": true,
-  "projectFilePath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
+  "projectFilePath": "C:\\Users\\e7897bt\\source\\repos\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
@@ -17,7 +17,10 @@
     "C:\\Users\\e7897bt\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\e7897bt\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\e7897bt\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\e7897bt\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+    "C:\\Users\\e7897bt\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
   ],
   "logs": []
 }

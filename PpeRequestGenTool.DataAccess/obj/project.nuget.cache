@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "PNQyt5RGpmudVj9bxE6Yq1Uh5qkI8aSdlhom7H/InRjor9NQhxIICPhHfTLW3OvlFJ6jLGd3KbNlaFnlsSdC3w==",
+  "dgSpecHash": "lHXajEfx2n2XDtZoUjVbAMzS7wYCJykdOrKqaCzJ/rRb5GexLHsb0fOaMUrHVAcDRE7ATc8e9VGrsePn1K7S4A==",
   "success": true,
-  "projectFilePath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\e7897bt\\source\\repos\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\e7897bt\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\e7897bt\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
   ],
   "logs": []
 }

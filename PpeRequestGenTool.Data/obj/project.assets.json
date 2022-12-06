@@ -8,21 +8,17 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\e7897bt\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\e7897bt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
+      "projectUniqueName": "C:\\Users\\e7897bt\\source\\repos\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
       "projectName": "PpeRequestGenTool.Data",
-      "projectPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
+      "projectPath": "C:\\Users\\e7897bt\\source\\repos\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
       "packagesPath": "C:\\Users\\e7897bt\\.nuget\\packages\\",
-      "outputPath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\obj\\",
+      "outputPath": "C:\\Users\\e7897bt\\source\\repos\\PpeRequestGenTool\\PpeRequestGenTool.Data\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\e7897bt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -31,6 +27,7 @@
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,12 +56,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

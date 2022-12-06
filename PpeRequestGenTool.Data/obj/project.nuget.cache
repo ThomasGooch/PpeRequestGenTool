@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "AdPpFTFB/+RTwso3aTRhY69ICaXR26nAmN+1rRueUilN0T2KNu6keA3RAi962WDgOTVqhtopSchVG8V+hE9Ocg==",
+  "dgSpecHash": "KWFEL9Gv4UwiKe1IQ2qvWQIjWiiaDtRVoUN7ExqQ+1IA59Gz0X/UUjJy8Q+Yfxpkj9WgIV++5lrbkWl9+k1zGA==",
   "success": true,
-  "projectFilePath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\e7897bt\\source\\repos\\PpeRequestGenTool\\PpeRequestGenTool.Data\\PpeRequestGenTool.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
   "logs": []
 }

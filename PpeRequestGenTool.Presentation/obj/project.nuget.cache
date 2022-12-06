@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GpX+GW47LQFro9VEbvDZX0XGQ0Bdt/9TmINCvHbb2YZS6BqTsHe6itYMu7Oy/sCIoUl+TxZCg+V9gBJEa8mJfg==",
+  "dgSpecHash": "y8JhFXxDUIHUTl/ts+gbRJQaR46ebzhjQeBP9vaOR+n7ETN68LYY1eGfYyJUWUW6OU97RjUCuYvRweXuF7YWtA==",
   "success": true,
-  "projectFilePath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Presentation\\PpeRequestGenTool.Presentation.csproj",
+  "projectFilePath": "C:\\Users\\e7897bt\\source\\repos\\PpeRequestGenTool\\PpeRequestGenTool.Presentation\\PpeRequestGenTool.Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
@@ -17,7 +17,11 @@
     "C:\\Users\\e7897bt\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\e7897bt\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\e7897bt\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\e7897bt\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+    "C:\\Users\\e7897bt\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.31\\microsoft.netcore.app.host.win-x64.3.1.31.nupkg.sha512"
   ],
   "logs": []
 }
