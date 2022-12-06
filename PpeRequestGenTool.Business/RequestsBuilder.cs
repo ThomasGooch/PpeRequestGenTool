@@ -453,25 +453,46 @@ namespace PpeRequestGenTool.Business
                 var result = new StringBuilder(requestStr);
                 var fieldSettings = _config.GetSection("editableFields");
                 //var requestLength = requestStr.Substring(16, 4);
-                result.Replace(smartHopReq.FirstName, "CA" + RetrieveRandomFirstName());
-                result.Replace(smartHopReq.LastName, "CB" + RetrieveRandomLastName());
-                result.Replace(smartHopReq.RxNumber, "D2" + fieldSettings.GetSection("rxNumberPrefix").Value + IncrementValue(count));
-                if (fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
+                if (!string.IsNullOrEmpty(smartHopReq.FirstName))
+                {
+                    result.Replace(smartHopReq.FirstName, "CA" + RetrieveRandomFirstName()); 
+                }
+                if (!string.IsNullOrEmpty(smartHopReq.LastName))
+                {
+                    result.Replace(smartHopReq.LastName, "CB" + RetrieveRandomLastName()); 
+                }
+                if (!string.IsNullOrEmpty(smartHopReq.RxNumber))
+                {
+                    result.Replace(smartHopReq.RxNumber, "D2" + fieldSettings.GetSection("rxNumberPrefix").Value + IncrementValue(count)); 
+                }
+                if (!string.IsNullOrEmpty(smartHopReq.CardholderId) && fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP" )
                 {
                     result.Replace(smartHopReq.CardholderId, "C2" + fieldSettings.GetSection("cardholderIdPrefix").Value + IncrementValue(count));
                 }
-                if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+                if (!string.IsNullOrEmpty(smartHopReq.PersonCode))
                 {
-                    result.Replace(smartHopReq.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                    if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+                    {
+                        result.Replace(smartHopReq.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                    }
+                    else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
+                    {
+                        result.Replace(smartHopReq.PersonCode, "C3" + RetrieveRandomPersonCode());
+                    } 
                 }
-                else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
+                if (!string.IsNullOrEmpty(smartHopReq.SccCode))
                 {
-                    result.Replace(smartHopReq.PersonCode, "C3" + RetrieveRandomPersonCode());
+                    result.Replace(smartHopReq.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value); 
                 }
-                result.Replace(smartHopReq.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value);
-                result.Replace(smartHopReq.DateOfBirth, "C4" + RetrieveRandomDate(_config.GetSection("DobMax").Value, _config.GetSection("DobMin").Value, "birth"));
-                result.Replace(smartHopReq.ZipCode, "CP" + RetrieveRandomZipCode());
-                if (fieldSettings.GetSection("ndc").Value != "SKIP")
+                if (!string.IsNullOrEmpty(smartHopReq.DateOfBirth))
+                {
+                    result.Replace(smartHopReq.DateOfBirth, "C4" + RetrieveRandomDate(_config.GetSection("DobMax").Value, _config.GetSection("DobMin").Value, "birth")); 
+                }
+                if (!string.IsNullOrEmpty(smartHopReq.ZipCode))
+                {
+                    result.Replace(smartHopReq.ZipCode, "CP" + RetrieveRandomZipCode()); 
+                }
+                if (!string.IsNullOrEmpty(smartHopReq.NdcCode) && fieldSettings.GetSection("ndc").Value != "SKIP")
                 {
                     result.Replace(smartHopReq.NdcCode, "D7" + fieldSettings.GetSection("ndc").Value);
                 }
@@ -524,59 +545,68 @@ namespace PpeRequestGenTool.Business
                 var result = new StringBuilder(requestStr);
                 var fieldSettings = _config.GetSection("duplicateBatch");
                 //var requestLength = requestStr.Substring(16, 4);
-                if (fieldSettings.GetSection("firstName").Value != "SKIP")
+                if (!string.IsNullOrEmpty(smartHopReq.FirstName) && fieldSettings.GetSection("firstName").Value != "SKIP")
                 {
                     result.Replace(smartHopReq.FirstName, "CA" + RetrieveRandomFirstName());
                 }
-                if (fieldSettings.GetSection("lastName").Value != "SKIP")
+                if (!string.IsNullOrEmpty(smartHopReq.LastName) && fieldSettings.GetSection("lastName").Value != "SKIP")
                 {
                     result.Replace(smartHopReq.LastName, "CB" + RetrieveRandomLastName());
                 }
-                if (fieldSettings.GetSection("rxNumberPrefix").Value != "SKIP")
+                if (!string.IsNullOrEmpty(smartHopReq.RxNumber) && fieldSettings.GetSection("rxNumberPrefix").Value != "SKIP")
                 {
                     var _extract = extractPrefix(smartHopReq.RxNumber, fieldSettings.GetSection("rxNumberPrefix").Value);
                     result.Replace(smartHopReq.RxNumber, _extract);
                 }
-                if (fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
+                if (!string.IsNullOrEmpty(smartHopReq.CardholderId) && fieldSettings.GetSection("cardholderIdPrefix").Value != "SKIP")
                 {
                     var _extract = extractPrefix(smartHopReq.CardholderId, fieldSettings.GetSection("cardholderIdPrefix").Value);
                     result.Replace(smartHopReq.CardholderId, _extract);
                 }
-                if (fieldSettings.GetSection("sccCode").Value != "SKIP")
+                if (!string.IsNullOrEmpty(smartHopReq.SccCode) && fieldSettings.GetSection("sccCode").Value != "SKIP")
                 {
                     result.Replace(smartHopReq.SccCode, "DK" + fieldSettings.GetSection("sccCode").Value);
                 }
-                if (fieldSettings.GetSection("ndc").Value != "SKIP")
+                if (!string.IsNullOrEmpty(smartHopReq.NdcCode) && fieldSettings.GetSection("ndc").Value != "SKIP")
                 {
                     result.Replace(smartHopReq.NdcCode, "D7" + fieldSettings.GetSection("ndc").Value);
                 }
-                if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+                if (!string.IsNullOrEmpty(smartHopReq.PersonCode))
                 {
-                    result.Replace(smartHopReq.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                    if (!(fieldSettings.GetSection("personCode").Value == "SKIP" || fieldSettings.GetSection("personCode").Value == "RANDOM"))
+                    {
+                        result.Replace(smartHopReq.PersonCode, "C3" + fieldSettings.GetSection("personCode").Value);
+                    }
+                    else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
+                    {
+                        result.Replace(smartHopReq.PersonCode, "C3" + RetrieveRandomPersonCode());
+                    } 
                 }
-                else if (fieldSettings.GetSection("personCode").Value == "RANDOM")
+                if (!string.IsNullOrEmpty(smartHopReq.DateOfBirth))
                 {
-                    result.Replace(smartHopReq.PersonCode, "C3" + RetrieveRandomPersonCode());
-                }
-                if (!(fieldSettings.GetSection("dob").Value == "SKIP" || fieldSettings.GetSection("dob").Value == "RANDOM"))
-                {
-                    // find increment or decrement
-                    var _change = FindDateByChange(smartHopReq.DateOfBirth, fieldSettings.GetSection("dob").Value);
-                    result.Replace(smartHopReq.DateOfBirth, "C4" + _change);
-                }
-                else if (fieldSettings.GetSection("dob").Value == "RANDOM")
-                {
-                    result.Replace(smartHopReq.DateOfBirth, "C4" + RetrieveRandomDate(fieldSettings.GetSection("DobMin").Value, fieldSettings.GetSection("DobMax").Value, "birth"));
+                    if (!(fieldSettings.GetSection("dob").Value == "SKIP" || fieldSettings.GetSection("dob").Value == "RANDOM"))
+                    {
+                        // find increment or decrement
+                        var _change = FindDateByChange(smartHopReq.DateOfBirth, fieldSettings.GetSection("dob").Value);
+                        result.Replace(smartHopReq.DateOfBirth, "C4" + _change);
+                    }
+                    else if (fieldSettings.GetSection("dob").Value == "RANDOM")
+                    {
+                        result.Replace(smartHopReq.DateOfBirth, "C4" + RetrieveRandomDate(fieldSettings.GetSection("DobMin").Value, fieldSettings.GetSection("DobMax").Value, "birth"));
+                    } 
                 }
 
 
-                if (!(fieldSettings.GetSection("zipcode").Value == "SKIP" || fieldSettings.GetSection("zipcode").Value == "RANDOM"))
+                if (!string.IsNullOrEmpty(smartHopReq.ZipCode))
                 {
-                    result.Replace(smartHopReq.ZipCode, "CP" + fieldSettings.GetSection("zipcode").Value);
-                }
-                else if (fieldSettings.GetSection("zipcode").Value == "RANDOM")
-                {
-                    result.Replace(smartHopReq.ZipCode, "CP" + RetrieveRandomZipCode());
+                    if (!(fieldSettings.GetSection("zipcode").Value == "SKIP" || fieldSettings.GetSection("zipcode").Value == "RANDOM"))
+                    {
+                        result.Replace(smartHopReq.ZipCode, "CP" + fieldSettings.GetSection("zipcode").Value);
+                    }
+                    else if (fieldSettings.GetSection("zipcode").Value == "RANDOM")
+                    {
+                        result.Replace(smartHopReq.ZipCode, "CP" + RetrieveRandomZipCode());
+                    } 
                 }
 
 

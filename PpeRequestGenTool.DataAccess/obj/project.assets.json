@@ -5,31 +5,14 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "PpeRequestGenTool.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/PpeRequestGenTool.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PpeRequestGenTool.Data.dll": {}
-        }
-      }
-    },
-    ".NETCoreApp,Version=v3.1/win-x64": {
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "PpeRequestGenTool.Data/1.0.0": {
@@ -141,50 +124,18 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[3.1.24, 3.1.24]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[3.1.24, 3.1.24]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[3.1.24, 3.1.24]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU3008",
-      "level": "Error",
-      "message": "Package 'Microsoft.AspNetCore.App.Runtime.win-x64 3.1.24' from source 'https://api.nuget.org/v3/index.json': The package integrity check failed. The package has changed since it was signed. Try clearing the local http-cache and run nuget operation again.",
-      "libraryId": "Microsoft.AspNetCore.App.Runtime.win-x64"
-    },
-    {
-      "code": "NU3008",
-      "level": "Error",
-      "message": "Package 'Microsoft.WindowsDesktop.App.Runtime.win-x64 3.1.24' from source 'https://api.nuget.org/v3/index.json': The package integrity check failed. The package has changed since it was signed. Try clearing the local http-cache and run nuget operation again.",
-      "libraryId": "Microsoft.WindowsDesktop.App.Runtime.win-x64"
-    }
-  ]
+  }
 }

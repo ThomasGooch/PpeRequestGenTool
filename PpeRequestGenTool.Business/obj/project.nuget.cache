@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "iZsQYW344FrpgONMMI19C3PFj/4fw7opyO9j1mY1LYSJXevbRfR6Of4BIDuJ4i901iIYFCPDCoNOZ5uQLIGV6A==",
-  "success": false,
+  "dgSpecHash": "sUXgr3Vo6M9NkmAfSGh0gbV9y3BB/bSicO974f+VKL+U+HtYNRTIFjakGecVLfrkPLgOEGExu4bvB+bY3sGjWg==",
+  "success": true,
   "projectFilePath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.Business\\PpeRequestGenTool.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\e7897bt\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
@@ -19,18 +19,5 @@
     "C:\\Users\\e7897bt\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\e7897bt\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU3008",
-      "level": "Error",
-      "message": "Package 'Microsoft.AspNetCore.App.Runtime.win-x64 3.1.24' from source 'https://api.nuget.org/v3/index.json': The package integrity check failed. The package has changed since it was signed. Try clearing the local http-cache and run nuget operation again.",
-      "libraryId": "Microsoft.AspNetCore.App.Runtime.win-x64"
-    },
-    {
-      "code": "NU3008",
-      "level": "Error",
-      "message": "Package 'Microsoft.WindowsDesktop.App.Runtime.win-x64 3.1.24' from source 'https://api.nuget.org/v3/index.json': The package integrity check failed. The package has changed since it was signed. Try clearing the local http-cache and run nuget operation again.",
-      "libraryId": "Microsoft.WindowsDesktop.App.Runtime.win-x64"
-    }
-  ]
+  "logs": []
 }

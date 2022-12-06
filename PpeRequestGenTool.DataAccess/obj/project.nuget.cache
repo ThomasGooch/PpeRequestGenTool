@@ -1,23 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xqo3calnM0AIgz4IyusiiP8oUUHS6aPuIT0EOKw+cSlJCtiGR0jj4qd+bjf9FGvMDvdxUfWgdrvNDSkVy48OPA==",
-  "success": false,
+  "dgSpecHash": "PNQyt5RGpmudVj9bxE6Yq1Uh5qkI8aSdlhom7H/InRjor9NQhxIICPhHfTLW3OvlFJ6jLGd3KbNlaFnlsSdC3w==",
+  "success": true,
   "projectFilePath": "C:\\MyStuff\\PpeRequestGenTool\\PpeRequestGenTool.DataAccess\\PpeRequestGenTool.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\e7897bt\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU3008",
-      "level": "Error",
-      "message": "Package 'Microsoft.AspNetCore.App.Runtime.win-x64 3.1.24' from source 'https://api.nuget.org/v3/index.json': The package integrity check failed. The package has changed since it was signed. Try clearing the local http-cache and run nuget operation again.",
-      "libraryId": "Microsoft.AspNetCore.App.Runtime.win-x64"
-    },
-    {
-      "code": "NU3008",
-      "level": "Error",
-      "message": "Package 'Microsoft.WindowsDesktop.App.Runtime.win-x64 3.1.24' from source 'https://api.nuget.org/v3/index.json': The package integrity check failed. The package has changed since it was signed. Try clearing the local http-cache and run nuget operation again.",
-      "libraryId": "Microsoft.WindowsDesktop.App.Runtime.win-x64"
-    }
-  ]
+  "logs": []
 }
